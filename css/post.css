@@ -1,0 +1,22 @@
+.post {
+    display: inline-block;
+    width: 100%;
+    border: 1px solid #CCC;
+    border-radius: 5px;
+    padding: 50px;
+}
+
+    .post > .header {
+        display: inline-block;
+        width: 100%;
+    }
+
+    .post > .content {
+        display: inline-block;
+        width: 100%;
+    }
+
+    .post > .footer {
+        display: inline-block;
+        width: 100%;
+    }
