@@ -1,5 +1,3 @@
-"use strict"
-
 const feed = [
     // {
     //     author: {
@@ -24,7 +22,7 @@ const feed = [
         author: {
             name: 'aaa',
             surname: 'AAA',
-            img: 'logo.png',
+            img: 'user.png',
             link: '#',
         },
         time: 1583832448675, 
@@ -36,14 +34,14 @@ const feed = [
         author: {
             name: 'aaa',
             surname: 'AAA',
-            img: 'logo.png',
+            img: 'user.png',
             link: '#',
         },
         time: 1583832448675, 
         content: {
             text: 'text-lrg',
             images: [
-                'pic1.jpg',
+                'img.png',
             ],
         },
     },
@@ -51,14 +49,14 @@ const feed = [
         author: {
             name: 'aaa',
             surname: 'AAA',
-            img: 'logo.png',
+            img: 'user.png',
             link: '#',
         },
         time: 1583832448675, 
         content: {
             text: 'text-sml',
             images: [
-                'pic1.jpg',
+                'img.png',
             ],
         },
     },
@@ -66,15 +64,15 @@ const feed = [
         author: {
             name: 'aaa',
             surname: 'AAA',
-            img: 'logo.png',
+            img: 'user.png',
             link: '#',
         },
         time: 1583832448675, 
         content: {
             text: 'text-sml',
             images: [
-                'pic1.jpg',
-                'pic2.jpg',
+                'img.png',
+                'img.png',
             ],
         },
     },
@@ -82,16 +80,16 @@ const feed = [
         author: {
             name: 'aaa',
             surname: 'AAA',
-            img: 'logo.png',
+            img: 'user.png',
             link: '#',
         },
         time: 1583832448675, 
         content: {
             text: 'text-sml',
             images: [
-                'pic1.jpg',
-                'pic2.jpg',
-                'pic3.jpg',
+                'img.png',
+                'img.png',
+                'img.png',
             ],
         },
     },
@@ -99,21 +97,21 @@ const feed = [
         author: {
             name: 'aaa',
             surname: 'AAA',
-            img: 'logo.png',
+            img: 'user.png',
             link: '#',
         },
         time: 1583832448675, 
         content: {
             text: 'text-sml',
             images: [
-                'pic1.jpg',
-                'pic2.jpg',
-                'pic3.jpg',
-                'pic4.jpg',
-                'pic5.jpg',
-                'pic6.jpg',
-                'pic7.jpg',
-                'pic8.jpg',
+                'img.png',
+                'img.png',
+                'img.png',
+                'img.png',
+                'img.png',
+                'img.png',
+                'img.png',
+                'img.png',
             ],
         },
     },
@@ -121,7 +119,7 @@ const feed = [
         author: {
             name: 'aaa',
             surname: 'AAA',
-            img: 'logo.png',
+            img: 'user.png',
             link: '#',
         },
         time: 1583832448675,

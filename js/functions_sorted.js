@@ -171,3 +171,197 @@ console.log( dalyba( 1.5, 2 ) )
 console.log( dalyba( 1, 0 ) )
 console.log( dalyba( 101, 10 ) )
 console.log( dalyba( 7, 88 ) )
+
+
+
+
+
+// 
+console.log( '-- Suskaičiuoti, kiek nurodytame intervale yra skaičių, kurie dalijasi be liekanos iš 3, 5 ir 7 atskirai: --' )
+// 0 - 11
+// 8 - 31
+// -18 - 18
+// rezultatą pateikti tokiu formatu:
+// Skaičių intervale tarp 0 ir 11, besidalinančių be liekanos iš 3 yra 4 vienetai.
+// Skaičių intervale tarp 0 ir 11, besidalinančių be liekanos iš 5 yra 3 vienetai.
+// Skaičių intervale tarp 0 ir 11, besidalinančių be liekanos iš 7 yra 2 vienetai.
+
+const divsCycle = ( min, max ) => {
+
+    // let div3 = div5 = div7 = 0
+    let div3 = genericDiv ( min, max, 3 )
+    let div5 = genericDiv ( min, max, 5 )
+    let div7 = genericDiv ( min, max, 7 )
+
+    /*if ( min === 0 && max === 0 ) {
+        console.log( 'nuliai' )
+        div7 = div5 = div3 = 1
+    }
+    else {
+        if ( min === 0 || max === 0 ) div7 = div5 = div3 = 1
+        let interval = Math.abs( max - min )
+        if ( ( min > 0 && max > 0 ) || ( min < 0 && max < 0 ) ) interval++
+        console.log( interval, ':', min, '-', max )
+
+        div3 += Math.floor( interval / 3 )
+        div5 += Math.floor( interval / 5 )
+        div7 += Math.floor( interval / 7 )
+    }*/
+
+    console.log( min, ' --> ', max )
+
+    if ( min === 0 && max === 0 ) console.log( 'nuliai' )
+    if ( min === 0 && max > 0 ) console.log( 'teigiami ir nuliai' ) 
+    if ( min > 0 && max > 0 ) console.log( 'tik teigiami' ) 
+    if ( min < 0 && max === 0 ) console.log( 'neigiami ir nuliai' )
+    if ( min < 0 && max < 0 ) console.log( 'tik neigiami' )
+    if ( min < 0 && max > 0 ) console.log( 'ir neigiami ir teigiami' )
+    
+
+    console.log( div3, div5, div7 )
+    // console.log( 'Skaičių intervale tarp ' + min + ' ir ' + max + ', besidalinančių be liekanos iš 3 yra ' + div3 + ' vienetai' )
+    // console.log( 'Skaičių intervale tarp ' + min + ' ir ' + max + ', besidalinančių be liekanos iš 5 yra ' + div5 + ' vienetai' )
+    // console.log( 'Skaičių intervale tarp ' + min + ' ir ' + max + ', besidalinančių be liekanos iš 7 yra ' + div7 + ' vienetai' )
+}
+
+const genericDiv = ( from , to, divider ) => {
+    let count = 0
+    if ( from !== to ) {
+        const maxCount = Math.floor( to / divider ) + 1
+        const minCount = Math.floor( from / divider ) + 1
+        count = maxCount - minCount
+        if ( from % divider === 0 ) count++
+    }
+    return count
+}
+
+// 4 - 3 - 2 //+
+// 8 - 5 - 3
+// 13 - 7 - 5
+
+// 12 - 12, +++
+// 24
+// 37, +++
+
+// 5 - 3 - 2
+// 8 - 4 - 3
+// 13 - 8 - 6
+
+divsCycle( 0, 11 )
+divsCycle( 8, 31 )
+divsCycle( -18, 0 )
+divsCycle( -18, -1 )
+divsCycle( -18, 18 )
+divsCycle( 0, 0 )
+
+
+// for ( let i = min; i <= max; i++ ) {
+//     if ( i % 3 === 0 ) div3++
+//     if ( i % 5 === 0 ) div5++
+//     if ( i % 7 === 0 ) div7++
+// }
+
+
+
+
+
+
+
+
+
+
+const skaitmenuKiekisSkaiciuje = ( num ) => {
+    console.log( '-------------------------------' );
+    let result = 0
+    if ( typeof( num ) !== 'number' || !isFinite( num ) ) result = 'Pateikta netinkamo tipo reikšmė.'
+    else {
+        if (num === 0) result++
+        else {
+            let liekana = Math.abs( num % 1 )
+            console.log( 'liek: ', liekana )
+            if ( liekana > 0) result = ( liekana + '' ).length - 2
+            
+            let main = Math.abs( num ) - liekana 
+            console.log( 'main: ', main )
+
+            let counter = 0
+            while (main > 10) {
+                main /= 10
+                counter++
+                // console.log(counter, main)
+            }
+            if (main > 0) counter++
+            result += counter
+            //result = ( Math.abs( num ) + '' ).replace( '.', '' ).length
+        }
+    }
+    return console.log( 'res:', result )
+}
+
+skaitmenuKiekisSkaiciuje( 564848978978978948945645648489489489489489489489848948989489489489489489489489489484 ) 
+skaitmenuKiekisSkaiciuje( 5.64848978978978948945645648489489489489489489489848948989489489489489489489489489484 ) 
+skaitmenuKiekisSkaiciuje( -5.64848978978978948945645648489489489489489489489848948989489489489489489489489489484 ) 
+skaitmenuKiekisSkaiciuje( -3.55555 ) 
+skaitmenuKiekisSkaiciuje( 0.3333333333333333333333333333 ) 
+skaitmenuKiekisSkaiciuje( 1.33333333333 ) 
+skaitmenuKiekisSkaiciuje( -0.33333333333 ) 
+skaitmenuKiekisSkaiciuje( 5555555555555555555555555555555555555555555555555555555555555555555555.5555555555555555555555555555555555555555555555555555555555 )
+
+//liekanos gali tureti max 16 skaiciu, daugiau informacijos nesaugo
+//esant skaiciams pries kableli gali gautis anomaliju
+//per daug skaiciu is abieju pusiu iskraipo paveiksla - paskutinis pavyzdys
+
+
+
+
+
+
+
+
+
+
+// 
+console.log( '-- Funkcija pavadinimu “skaitmenuKiekisSkaiciuje”: --' )
+// priima vieną kintamąjį
+// jei perduotas kintamasis nėra skaičiaus tipo, tai išveda pranešimą “Pateikta netinkamo tipo reikšmė.”
+// priešingu atveju, funkcija tęsia darbą
+// į atskirą kintamąjį įsimena skaičių sudarančių skaitmenų kiekį
+// gražina skaitmenų kiekį
+const skaitmenuKiekisSkaiciuje = ( num ) => {
+    let result = ''
+    if ( typeof( num ) !== 'number' || !isFinite( num ) ) result = 'Pateikta netinkamo tipo reikšmė.'
+    else {
+        result = ( Math.abs( num ) + '' ).replace( '.', '' ).length
+    }
+    return console.log( result )
+}
+// TESTAI:
+// rezultatas: 1
+// rezultatas: 3
+// rezultatas: 11
+// rezultatas: “Pateikta netinkamo tipo reikšmė.”
+// rezultatas: “Pateikta netinkamo tipo reikšmė.”
+// rezultatas: “Pateikta netinkamo tipo reikšmė.”
+
+skaitmenuKiekisSkaiciuje( 5 ) 
+skaitmenuKiekisSkaiciuje( 781 ) 
+skaitmenuKiekisSkaiciuje( 37060123456 ) 
+skaitmenuKiekisSkaiciuje( true ) 
+skaitmenuKiekisSkaiciuje( 'asd' ) 
+skaitmenuKiekisSkaiciuje( NaN ) 
+skaitmenuKiekisSkaiciuje( -NaN ) 
+//masyvai, masyvai masyvuose, t.t., etc...
+
+skaitmenuKiekisSkaiciuje( undefined ) 
+skaitmenuKiekisSkaiciuje( -10 ) 
+skaitmenuKiekisSkaiciuje( -11.1111 ) 
+skaitmenuKiekisSkaiciuje( 12.00 ) 
+skaitmenuKiekisSkaiciuje( 0x11 ) 
+skaitmenuKiekisSkaiciuje( 0o11 ) 
+skaitmenuKiekisSkaiciuje( 0b11 ) 
+skaitmenuKiekisSkaiciuje( null ) 
+skaitmenuKiekisSkaiciuje( Infinity ) 
+skaitmenuKiekisSkaiciuje( -Infinity ) 
+skaitmenuKiekisSkaiciuje( 123e-3 ) 
+skaitmenuKiekisSkaiciuje( 123e+2 ) 
+skaitmenuKiekisSkaiciuje( 564848978978978948945645648489489489489489489489848948989489489489489489489489489484 ) 
