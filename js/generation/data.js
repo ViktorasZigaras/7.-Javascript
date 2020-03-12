@@ -24,7 +24,7 @@ const feed = [
         author: {
             name: 'aaa',
             surname: 'AAA',
-            img: '111.jpg',
+            img: 'logo.png',
             link: '#',
         },
         time: 1583832448675, 
@@ -36,7 +36,7 @@ const feed = [
         author: {
             name: 'aaa',
             surname: 'AAA',
-            img: '111.jpg',
+            img: 'logo.png',
             link: '#',
         },
         time: 1583832448675, 
@@ -51,7 +51,7 @@ const feed = [
         author: {
             name: 'aaa',
             surname: 'AAA',
-            img: '111.jpg',
+            img: 'logo.png',
             link: '#',
         },
         time: 1583832448675, 
@@ -66,7 +66,7 @@ const feed = [
         author: {
             name: 'aaa',
             surname: 'AAA',
-            img: '111.jpg',
+            img: 'logo.png',
             link: '#',
         },
         time: 1583832448675, 
@@ -82,7 +82,7 @@ const feed = [
         author: {
             name: 'aaa',
             surname: 'AAA',
-            img: '111.jpg',
+            img: 'logo.png',
             link: '#',
         },
         time: 1583832448675, 
@@ -99,7 +99,7 @@ const feed = [
         author: {
             name: 'aaa',
             surname: 'AAA',
-            img: '111.jpg',
+            img: 'logo.png',
             link: '#',
         },
         time: 1583832448675, 
@@ -121,7 +121,7 @@ const feed = [
         author: {
             name: 'aaa',
             surname: 'AAA',
-            img: '111.jpg',
+            img: 'logo.png',
             link: '#',
         },
         time: 1583832448675,
